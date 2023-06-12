@@ -1,0 +1,55 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Головна сторінка
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'service/css/service.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'appointment/css/appointment.css' %}">
+
+{% endblock %}
+
+{% block banner%}
+Ласкаво просимо до нашої стоматології<br>Ми надаємо різноманітні послуги з догляду за зубами
+{% endblock %}
+
+{% block content%}
+<!-- Services section -->
+<div class="container">
+  <div class="col-lg-12 text-center mt-4"> <!-- Add 'mt-4' class for margin top -->
+    <h2 class="text-center mt-0">Послуги</h2>
+    <hr class="divider my-4">
+  </div>
+</div>
+{% include 'service/category.html' with categories=categories %}
+<!-- Section "About us" -->
+<section class="page-section bg-light" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="text-center mt-0">Про нас</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-0">Ми - сучасна стоматологічна клініка, яка пропонує найвищу якість стоматологічного лікування. Наша команда досвідчених стоматологів працює з метою забезпечити нашим пацієнтам здорові та прекрасні посмішки. Ми використовуємо сучасні технології та передові методики, щоб забезпечити ефективне та комфортне лікування. Наш пріоритет - ваше задоволення та довіра, тому ми створюємо дружню та затишну атмосферу, де ви будете почуватися комфортно під час кожного візиту до нас.</p>
+        </div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-box">
+          <img src="{% static 'main/images/image1.jpg' %}" class="photo">
+        </div>
+        <div class="photo-box">
+          <img src="{% static 'main/images/image2.jpg' %}" class="photo">
+        </div>
+        <div class="photo-box">
+          <img src="{% static 'main/images/image3.jpg' %}" class="photo">
+        </div>
+      </div><div class="appButton">
+  <a href="{% url 'appointment' %}">Записатися на прийом</a>
+</div>
+    </div>
+
+  </section>
+{% endblock %}

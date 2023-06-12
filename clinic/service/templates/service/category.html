@@ -1,0 +1,19 @@
+{% load static %}
+<!-- Services section -->
+<section class="services-section">
+  <div class="container">
+    <div class="row">
+      {% for category in categories %}
+      <div class="col-lg-3 col-md-6">
+        <a class="services-link" href="{% url 'category_detail' category.pk %}">
+          <div class="service-box">
+            <img src="{{ category.photo.url }}">
+            <h3>{{ category.name }}</h3>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

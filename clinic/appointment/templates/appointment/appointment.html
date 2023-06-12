@@ -1,0 +1,24 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Головна сторінка
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'appointment/css/appointment.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+{% endblock %}
+
+{% block banner%}
+Запис на прийом
+{% endblock %}
+
+{% block content%}
+<form class="appointment-form" method="POST" action="{% url 'appointment' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Записатися</button>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+  .doctor-box {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-box img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+  }
+
+  .doctor-box .doctor-info {
+    width: 100%;
+    text-align: left;
+  }
+
+  .doctor-box h1 {
+    margin-top: 0;
+  }

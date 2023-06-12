@@ -1,0 +1,42 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Новини
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'news/css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <script src="{% static 'news/js/news.js' %}"></script>
+{% endblock %}
+
+{% block banner%}Новини{% endblock %}
+
+{% block content%}
+<section class="news-section">
+  <div class="container">
+    <div class="row">
+      {% for news in news_list %}
+      <div class="col-lg-4 col-md-6">
+        <a class="news-link" href="{% url 'newsDetail' news.pk %}">
+          <div class="news-box">
+            <div class="image-wrapper">
+              <div class="image-container">
+                <img src="{{ news.photo.url }}">
+              </div>
+            </div>
+            <div class="content-wrapper">
+              <h3>{{ news.title }}</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

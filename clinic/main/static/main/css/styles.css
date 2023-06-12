@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #3696b9;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: lightgray;
+}
+
+.footer {
+  background-color: #1b4b5d;
+  color: white;
+}
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #5eabc7;
+  text-decoration: none;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+#logo {
+  width: 150px;
+  height: auto;
+}

@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Новини
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'news/css/news.css' %}">
+    <link rel="stylesheet" href="{% static 'news/css/news_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <script src="{% static 'news/js/news.js' %}"></script>
+{% endblock %}
+
+{% block banner %}Новини{% endblock %}
+
+{% block content %}
+<section class="news-detail-section py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="news-detail-box">
+            <img src="{{ news.photo.url }}">
+          <h2>{{ news.title }}</h2>
+          <p>{{ news.content }}</p>
+          <p class="publication-date">Published on {{ news.publication_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

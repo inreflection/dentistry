@@ -1,0 +1,85 @@
+.doctors-section {
+  margin-top: 50px;
+}
+
+.doctor-box {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 375px; /* Встановіть максимальну ширину, якщо потрібно */
+  margin-left: auto; /* Вирівняйте по центру, якщо потрібно */
+  margin-right: auto; /* Вирівняйте по центру, якщо потрібно */
+  border-radius: 10px;
+  padding: 35px;
+  display: block;
+  text-decoration: none;
+}
+
+.doctor-box img {
+  width: 100%;
+  max-width: 180px;
+  max-height: 250px;
+  height: auto;
+  border-radius: 50%; /* Make the image oval-shaped */
+}
+
+.doctor-box h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 20px; /* Increase distance between image and name */
+  margin-bottom: 20; /* Remove bottom margin */
+}
+
+.doctors-link {
+  color: black;
+  text-decoration: none;
+}
+
+.doctors-link:hover {
+  color: #5eabc7;
+  text-decoration: none;
+}
+
+.doctor-box p {
+  color: black;
+}
+.specialization-item {
+  background-color: transparent;
+  color: #5593a9;
+  padding: 5px 10px;
+  border: 1px solid #5593a9;
+  border-radius: 30px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px; /* Доданий відступ знизу */
+}
+
+.doctor-box {
+  text-align: center;
+  margin-bottom: 30px; /* Відступ знизу між боксами стоматологів */
+}
+
+.doctor-name {
+  margin-top: 20px; /* Відступ зверху для імені стоматолога */
+}
+
+.specialization {
+  margin-top: 10px; /* Відступ зверху для спеціалізації стоматолога */
+}
+@media (max-width: 576px) {
+.doctor-box {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%; /* Задайте ширину 100% */
+  max-width: 400px; /* Встановіть максимальну ширину, якщо потрібно */
+  margin-left: auto; /* Вирівняйте по центру, якщо потрібно */
+  margin-right: auto; /* Вирівняйте по центру, якщо потрібно */
+  border-radius: 10px;
+  padding: 35px;
+  display: block;
+  text-decoration: none;
+}
+  .doctor-box h3 {
+    font-size: 18px;
+  }
+}
+

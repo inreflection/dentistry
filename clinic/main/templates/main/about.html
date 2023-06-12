@@ -1,0 +1,40 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Про нас
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+
+{% endblock %}
+{% block banner%}Про нас{% endblock %}
+{% block content%}
+   <section class="page-section bg-light" id="about">
+    <div class="container">
+      <hr class="divider my-4">
+        <div class="photo-team">
+        <div class="photo-team">
+          <img src="{% static 'main/images/teamDentists.png' %}" class="photo">
+        </div>
+      </div>
+        <div class="spacer"></div>
+      <div class="row justify-content-center text-row">
+        <div class="col-lg-8 text-center">
+          <div class="text-wide center-block">
+            <p class="text-muted mb-0">Стоматологія "WhiteCanvas" - це сучасна стоматологічна клініка, яка пропонує широкий спектр стоматологічних послуг. Наша команда професіоналів займається не лише лікуванням зубів, але й надає комплексний підхід до здоров'я вашої ротової порожнини. Ми працюємо з найсучаснішими технологіями та використовуємо передові методики, щоб забезпечити нашим пацієнтам високу якість лікування.</p>
+            <p class="text-muted mb-0">Від наших досвідчених стоматологів до дружнього персоналу, ми прагнемо зробити ваше відвідування комфортним і приємним досвідом. Наша стоматологія має сучасні та зручні приміщення, обладнані передовими технологіями, що дозволяють нам проводити точну діагностику та ефективне лікування. Ми прагнемо забезпечити безболісне та безстрашне лікування для наших пацієнтів, використовуючи найновітніші методи анестезії та забезпечуючи комфортну атмосферу.</p>
+            <p class="text-muted mb-0">Наші стоматологи постійно підвищують свої навички і знання, беручи участь у професійних семінарах та конференціях. Ми розуміємо, що кожен пацієнт унікальний, тому надаємо індивідуальний підхід до кожного випадку і пропонуємо оптимальні рішення для поліпшення вашого стану. В нашій стоматології ви можете розраховувати на високу якість обслуговування, ввічливий персонал та турботу про ваше здоров'я.</p>
+          </div>
+          <hr class="divider my-4">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

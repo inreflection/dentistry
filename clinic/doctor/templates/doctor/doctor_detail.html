@@ -1,0 +1,22 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'doctor/css/doctor_detail.css' %}">
+{% endblock %}
+{% block banner%}Лікарі{% endblock %}
+{% block content %}
+<div class="doctor-box">
+  <img src="{{ doctor.photo.url }}" alt="{{ doctor.first_name }} {{ doctor.last_name }}">
+  <div class="doctor-info">
+    <h1>{{ doctor.first_name }} {{ doctor.last_name }}</h1>
+    <p><strong>Спеціалізація:</strong> {{ doctor.specialization.all|join:", " }}</p>
+    <p><strong>Років досвіду роботи:</strong> {{ doctor.years_of_experience }}</p>
+    <p><strong>Освіта:</strong> {{ doctor.education }}</p>
+    <p><strong>Додаткова інформація про досвід роботи:</strong> {{ doctor.additional_info }}</p>
+  </div>
+</div>
+{% endblock %}

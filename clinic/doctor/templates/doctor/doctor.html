@@ -1,0 +1,46 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Лікарі
+{% endblock %}
+
+{% block banner%}Лікарі{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'doctor/css/doctor.css' %}">
+{% endblock %}
+
+{% block content%}
+{% load static %}
+<!-- Секція з фото лікарів -->
+<!-- doctor.html -->
+<!-- doctor.html -->
+<section class="doctors-section">
+  <div class="container">
+    <div class="row">
+      {% for doctor in doctors %}
+      <div class="col-lg-3 col-md-6">
+        <a class="doctors-link" href="{% url 'doctorDetail' doctor.pk %}">
+          <div class="doctor-box">
+            <img src="{{ doctor.photo.url }}">
+            <h3>{{ doctor.first_name }} {{ doctor.last_name }}</h3>
+            <div class="specialization-box">
+              {% for specialization in doctor.specialization.all %}
+                <div class="specialization-item">{{ specialization.name }}</div>
+              {% endfor %}
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

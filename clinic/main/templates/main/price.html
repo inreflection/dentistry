@@ -1,0 +1,46 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Ціни
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/price.css' %}">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+{% endblock %}
+{% block banner%}Ціни{% endblock %}
+{% block content%}
+<div class="container">
+    <div class="table-container">
+        {% for category in categories %}
+        <div class="card">
+            <div class="card-header table-header" onclick="toggleTable('table{{ forloop.counter }}')">{{ category.name }}</div>
+            <table id="table{{ forloop.counter }}" class="table table-bordered table-content" style="display: none;">
+                <thead>
+
+                </thead>
+                <tbody>
+                    {% for service in services %}
+                    {% if service.category == category %}
+                    <tr>
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.price }} грн</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="{% static 'main/js/price.js' %}"></script>
+
+{% endblock %}

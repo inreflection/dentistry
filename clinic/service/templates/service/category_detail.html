@@ -1,0 +1,49 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title%}
+    Послуги
+{% endblock %}
+
+{% block banner%}Послуги{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'service/css/price.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'service/css/category_detail.css' %}">
+
+
+{% endblock %}
+
+{% block content%}
+<section class="category-detail-section text-center" style="max-width: 800px; margin: 0 auto;">
+  <div class="container">
+    <h2 class="text-center" style="font-weight: normal;">{{ category.name }}</h2>
+    <p class="text-center description" style="font-weight: normal;">{{ category.description }}</p>
+    <table class="table-container table-content">
+      <thead>
+        <tr>
+          <th>Послуга</th>
+          <th>Ціна</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for service in services %}
+        <tr>
+          <td>{{ service.name }}</td>
+          <td>{{ service.price }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+  </div>
+</section>
+
+
+
+{% endblock %}
